@@ -7,9 +7,6 @@
 
 namespace Aurora\Modules\S3CorporateFilestorage;
 
-use Aws\S3\S3Client;
-//use GuzzleHttp\RedirectMiddleware;
-
 /**
  * @license https://www.gnu.org/licenses/agpl-3.0.html AGPL-3.0
  * @license https://afterlogic.com/products/common-licensing AfterLogic Software License
