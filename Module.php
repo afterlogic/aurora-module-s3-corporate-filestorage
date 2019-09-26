@@ -16,6 +16,8 @@ namespace Aurora\Modules\S3CorporateFilestorage;
  */
 class Module extends \Aurora\Modules\S3Filestorage\Module
 {
+	protected $aRequireModules = ['S3Filestorage'];
+
 	protected static $sStorageType = 'corporate';
 	protected static $iStorageOrder = 20;
 }
