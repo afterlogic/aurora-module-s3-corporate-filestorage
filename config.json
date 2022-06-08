@@ -1,6 +1,10 @@
 {
-	"Disabled": [
-		false,
-		"bool"
-	]
+  "Disabled": [
+    false,
+    "bool"
+  ],
+  "Disabled_Description": [
+    "",
+    "string"
+  ]
 }
