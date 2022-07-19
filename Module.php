@@ -7,6 +7,8 @@
 
 namespace Aurora\Modules\S3CorporateFilestorage;
 
+use Aurora\Modules\CorporateFiles\Module as CorporateFiles;
+
 /**
  * @license https://www.gnu.org/licenses/agpl-3.0.html AGPL-3.0
  * @license https://afterlogic.com/products/common-licensing AfterLogic Software License
@@ -16,8 +18,18 @@ namespace Aurora\Modules\S3CorporateFilestorage;
  */
 class Module extends \Aurora\Modules\S3Filestorage\Module
 {
-	protected $aRequireModules = ['S3Filestorage'];
+	protected $aRequireModules = ['CorporateFiles', 'S3Filestorage'];
 
 	protected static $sStorageType = 'corporate';
 	protected static $iStorageOrder = 20;
+
+	public function init()
+	{
+		$corporateFiles = CorporateFiles::getInstance();
+		if ($corporateFiles && !$this->getConfig('Disabled', false)) {
+			$corporateFiles->setConfig('Disabled', true);
+		}
+
+		parent::init();
+	}
 }
