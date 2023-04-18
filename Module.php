@@ -41,4 +41,13 @@ class Module extends \Aurora\Modules\S3Filestorage\Module
     {
         return parent::Decorator();
     }
+
+    /**
+     *
+     * @return Settings
+     */
+    protected function GetModuleSettings()
+    {
+        return $this->oModuleSettings;
+    }
 }
