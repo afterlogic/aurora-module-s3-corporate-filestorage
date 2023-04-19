@@ -14,6 +14,8 @@ use Aurora\Modules\CorporateFiles\Module as CorporateFiles;
  * @license https://afterlogic.com/products/common-licensing AfterLogic Software License
  * @copyright Copyright (c) 2023, Afterlogic Corp.
  *
+ * @property Settings $oModuleSettings
+ *
  * @package Modules
  */
 class Module extends \Aurora\Modules\S3Filestorage\Module
@@ -26,7 +28,7 @@ class Module extends \Aurora\Modules\S3Filestorage\Module
     public function init()
     {
         $corporateFiles = CorporateFiles::getInstance();
-        if ($corporateFiles && !$this->getConfig('Disabled', false)) {
+        if ($corporateFiles && !$this->oModuleSettings->Disabled) {
             $corporateFiles->setConfig('Disabled', true);
         }
 
