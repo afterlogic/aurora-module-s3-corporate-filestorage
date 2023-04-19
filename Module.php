@@ -46,7 +46,7 @@ class Module extends \Aurora\Modules\S3Filestorage\Module
      *
      * @return Settings
      */
-    protected function GetModuleSettings()
+    public function getModuleSettings()
     {
         return $this->oModuleSettings;
     }
